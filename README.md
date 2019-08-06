@@ -54,5 +54,9 @@ Executing in container (/some/new/root): /bin/bash
 Start with a specific uid/gid inside container:
 
 ```
-sudo scratchy -uid 1000 -gid 1000 run ./root /bin/bash
+sudo scratchy -uid 1000 -gid 1000 run ./root /bin/ps aux
+Executing in container (/some/new/root): /bin/ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 103048  1428 ?        Sl+  01:14   0:00 /proc/self/exe -uid 1000 -gid 1000 child ./root /bin/ps aux
+1000         6  0.0  0.0   9724  2804 ?        R+   01:14   0:00 /bin/ps aux
 ```
